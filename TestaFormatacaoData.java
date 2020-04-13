@@ -7,7 +7,8 @@ import java.time.format.DateTimeFormatter;
 public class TestaFormatacaoData{
     public static void main(String[] args){
         LocalDateTime agora = LocalDateTime.now();
-
+    
+        //Formatação de datas com diferentes padrões
         DateTimeFormatter diaMesAno = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter diaMesAnoComHifen = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         DateTimeFormatter diaMesAnoComPonto = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -20,11 +21,11 @@ public class TestaFormatacaoData{
         System.out.println(agora.format(mesDiaAno));
         System.out.println(agora.format(formatoBizarro)); //vice-versa
         System.out.println(formatoBizarro.format(agora)); //vice-versa
-
+        
+        //Parse em data do tipo String
         String agoraEmTexto = "19/03/2020";
         LocalDate dataHoje = LocalDate.parse(agoraEmTexto,diaMesAno);
         System.out.println(dataHoje);
-
 
     }
 }
